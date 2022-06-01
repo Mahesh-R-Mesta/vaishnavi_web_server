@@ -4,7 +4,7 @@ module.exports = {
     console.log(req.baseUrl);
     console.log(req.query);
     Utility.sendSuccess(req, res, {
-      hasAccess: true,
+      isLoggedIn: true,
     });
   },
 
@@ -14,7 +14,7 @@ module.exports = {
     if (req.body.username == "Shree" && req.body.password == "123@1998") {
       Utility.sendSuccess(req, res, {
         username: req.body.username,
-        loginSuccessful: true,
+        isLoggedIn: true,
       });
     } else {
       Utility.sendFailure(req, res, "invalid Username or password");
