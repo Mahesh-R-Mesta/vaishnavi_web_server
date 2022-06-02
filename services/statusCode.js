@@ -1,4 +1,4 @@
 module.exports = {
-  success: 109,
+  success: 100,
   failure: 108,
 };

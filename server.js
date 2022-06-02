@@ -1,5 +1,23 @@
-const app = require("./app");
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+const { isRequired } = require("nodemon/lib/utils");
+dotenv.config({path:'./config.env'});
 
-app.listen(4000, "127.1.1.0", () => {
-  console.log("listening on port 4000");
+const app = require("./app");
+const port = process.env.PORT || 3000
+
+
+mongoose.connect(process.env.DATABASE,{
+  useNewUrlParser:true,
+  useCreateIndex:true,
+  useFindAndModify:false,
+}).then(()=>{
+  console.log("DB is successfully connected");
+}).catch(err=>{
+  console.log(`error : ${err}`);
+});
+
+
+app.listen(port, "127.1.1.0", () => {
+  console.log("listening on port ",port);
 });
