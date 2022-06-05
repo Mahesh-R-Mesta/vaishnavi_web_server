@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const bodyParser  = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
-const admin = require("./routes/admin");
+const admin = require("./routes/adminRoute");
 const app = express();
 
 if(process.env.NODE_ENV === 'development'){

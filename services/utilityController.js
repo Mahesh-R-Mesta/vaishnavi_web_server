@@ -13,4 +13,10 @@ module.exports = {
       message: errMsg,
     });
   },
+  isNotEmpty(value){
+    if(value === undefined || value === '' || value === 'undefined'){
+     return false; 
+    }
+    return true;
+  }
 };
