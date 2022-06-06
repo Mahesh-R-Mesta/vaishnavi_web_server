@@ -8,4 +8,5 @@ router.route("/accountLogin").post(adminController.login);
 router.route('/addProduct').post(adminController.addNewProduct);
 router.route('/allProducts').get(adminController.getAllProducts);
 
+
 module.exports = router;

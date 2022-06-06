@@ -1,5 +1,5 @@
 const Utility = require("../services/utilityController");
-const Product = require('../model/productModel');
+const Product = require('../../../vaishnavi_web_server/model/productModel');
 
 module.exports = {
   isLogin: (req, res, err) => {
