@@ -1,0 +1,27 @@
+GET http://127.1.1.0:4000/api/v1/admin/isLogin
+Authorization: Barier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJkNTk1YWY1YjQxNDcwZTNkZTIxMTI0IiwiZW1haWwiOiJtYWhlc2htZXN0YTk4QGdtYWlsLmNvbSIsImlhdCI6MTY1ODUwNzQxMn0.2qG3cFtfcPBS3nJktlG1accDyUsrxh3lSn-B_zKv1H4
+
+
+###
+POST http://127.1.1.0:4000/api/v1/admin/register
+Content-Type: application/json
+
+{
+    "username":"Shree",
+    "password":"123@1998",
+    "email":"maheshmesta98@gmail.com"
+}
+
+
+####
+POST http://127.1.1.0:4000/api/v1/admin/accountLogin
+Content-Type: application/json
+
+{
+    "username":"Shree",
+    "password":"123@1998"
+}
+
+###
+GET http://127.1.1.0:4000/api/v1/admin/getProducts
+Authorization: Barier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJkNTk1YWY1YjQxNDcwZTNkZTIxMTI0IiwiZW1haWwiOiJtYWhlc2htZXN0YTk4QGdtYWlsLmNvbSIsImlhdCI6MTY1ODUwODAzOH0.69ofhJavdtPOlD4gqwn1t1fp7OKyQXqWFmsiLAa0YUc

@@ -23,7 +23,6 @@ const ShopSchema = mongoose.Schema({
         default:'none'
     },
     address: {
-      
         district:{
             type: String,
         },

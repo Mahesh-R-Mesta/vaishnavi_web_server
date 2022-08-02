@@ -1,6 +1,6 @@
 const StatusCode = require("../services/statusCode");
 module.exports = {
-  sendSuccess: (req, res, data) => {
+  sendSuccess: (req, res, data,status) => {
     res.status(200).json({
       code: StatusCode.success,
       message: "success",
@@ -12,6 +12,18 @@ module.exports = {
       code: StatusCode.failure,
       message: errMsg,
     });
+  },
+  sendDuplicateError:(req, res, msg)=>{
+    res.status(409).json({
+      code: StatusCode.userExist,
+      message: msg
+    })
+  },
+  sendAuthError:(req,res,err)=>{
+    res.status(403).json({
+      code: StatusCode.userNotFound,
+      message:"User not found"
+    })
   },
   isNotEmpty(value){
     if(value === undefined || value === '' || value === 'undefined'){
