@@ -1,6 +1,8 @@
 const express = require("express");
 const adminController = require("../controller/adminController");
+const orderController = require("../controller/orderController")
 const authenticate = require('../services/auth_middleware')
+
 
 const router = express.Router();
 
@@ -13,5 +15,6 @@ router.route('/getProducts').get(authenticate,adminController.getProducts);
 router.route('/deleteById').get(authenticate, adminController.deleteProductById);
 router.route('/addShop').post(authenticate, adminController.addShop);
 router.route('/updateProduct').post(authenticate,adminController.updateProduct);
+router.route('/createOrder').post(authenticate,orderController.createOrder)
 
 module.exports = router;

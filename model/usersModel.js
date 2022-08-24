@@ -19,9 +19,13 @@ const schema = mongoose.Schema({
     token:{
         type:String,
     },
+    admin:{
+        type:Boolean,
+        default: false
+    },
     createdAt:{
         type: Number,
-        default:  233//Date.getTime()/1000
+        default: (new Date()).getTime()
     }
 });
 

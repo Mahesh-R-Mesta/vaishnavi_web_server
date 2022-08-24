@@ -1,5 +1,5 @@
 GET http://127.1.1.0:4000/api/v1/admin/isLogin
-Authorization: Barier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJkNTk1YWY1YjQxNDcwZTNkZTIxMTI0IiwiZW1haWwiOiJtYWhlc2htZXN0YTk4QGdtYWlsLmNvbSIsImlhdCI6MTY1ODUwNzQxMn0.2qG3cFtfcPBS3nJktlG1accDyUsrxh3lSn-B_zKv1H4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJkNTk1YWY1YjQxNDcwZTNkZTIxMTI0IiwiZW1haWwiOiJtYWhlc2htZXN0YTk4QGdtYWlsLmNvbSIsImlhdCI6MTY1ODUwNzQxMn0.2qG3cFtfcPBS3nJktlG1accDyUsrxh3lSn-B_zKv1H4
 
 
 ###
@@ -24,4 +24,16 @@ Content-Type: application/json
 
 ###
 GET http://127.1.1.0:4000/api/v1/admin/getProducts
-Authorization: Barier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJkNTk1YWY1YjQxNDcwZTNkZTIxMTI0IiwiZW1haWwiOiJtYWhlc2htZXN0YTk4QGdtYWlsLmNvbSIsImlhdCI6MTY1ODUwODAzOH0.69ofhJavdtPOlD4gqwn1t1fp7OKyQXqWFmsiLAa0YUc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJkNTk1YWY1YjQxNDcwZTNkZTIxMTI0IiwiZW1haWwiOiJtYWhlc2htZXN0YTk4QGdtYWlsLmNvbSIsImlhdCI6MTY1ODUwODAzOH0.69ofhJavdtPOlD4gqwn1t1fp7OKyQXqWFmsiLAa0YUc
+
+###
+POST http://127.1.1.0:4000/api/v1/admin/addShop
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJkNTk1YWY1YjQxNDcwZTNkZTIxMTI0IiwiZW1haWwiOiJtYWhlc2htZXN0YTk4QGdtYWlsLmNvbSIsImlhdCI6MTY1ODUwODAzOH0.69ofhJavdtPOlD4gqwn1t1fp7OKyQXqWFmsiLAa0YUc
+Content-Type: application/json
+{
+    "shopName":"",
+    "owner":"M.G HEGADE",
+    "phone":9986645522,
+    "email":"mahadev@gmail.com",
+    
+}

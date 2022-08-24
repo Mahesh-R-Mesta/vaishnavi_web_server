@@ -14,13 +14,17 @@ const ShopSchema = mongoose.Schema({
     },
     phone:{
         type: Number,
-        required: true,
+        required: [true,"Phone number required"],
         unique: true
     },
     email: {
         type: String,
-        required: false,
+        required: [false,"Email is required"],
         default:'none'
+    },
+    updatedAt:{
+        type: Number,
+        default: Date.parse(new Date)
     },
     address: {
         district:{
@@ -28,7 +32,6 @@ const ShopSchema = mongoose.Schema({
         },
         city:{
            type: String,
-
         },
         area: {
            type: String,

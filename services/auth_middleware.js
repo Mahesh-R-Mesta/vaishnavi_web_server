@@ -8,7 +8,6 @@ module.exports =  function authenticate(req,res,next) {
         if(!token) return Utility.sendFailure(req,res,"invalid request");
         const user = jwt.verify(token,process.env.AUTH_TOKEN);
         req.body.user =  user
-        console.log(req.body);
         next()
     } catch(e) {
         return Utility.sendAuthError(req,res)
