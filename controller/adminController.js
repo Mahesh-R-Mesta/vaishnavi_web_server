@@ -80,8 +80,8 @@ module.exports = {
     } catch(e){
       return Utility.sendFailure(req, res, "invalid Username or password");
     }
- 
   },
+  
   addNewProduct: async (req,res,err)=>{
     try {
       const data = await Product.create(req.body);
@@ -90,6 +90,7 @@ module.exports = {
       Utility.sendFailure(req,res,e.message);
     }
   },
+
   getProducts: async (req,res,err) => {
     try {
       if(Utility.isNotEmpty(req.query.id)) {
@@ -103,10 +104,11 @@ module.exports = {
       Utility.sendFailure(req,res,e.message);
     }
   },
+  
   updateProduct: async (req,res,err)=> {
     try {
-      if(!Utility.isNotEmpty(req.query.id)) return Utility.sendFailure(req,res,'id not found');
-      const shop = await Product.updateOne({'_id':req.query.id},{...req.body});
+      if(!Utility.isNotEmpty(req.body.id)) return Utility.sendFailure(req,res,'id not found');
+      const shop = await Product.updateOne({'_id':req.body.id},{...req.body});
       Utility.sendSuccess(req,res,shop);
     } catch (e) {
       Utility.sendFailure(req,res,e.message);
@@ -116,8 +118,8 @@ module.exports = {
   deleteProductById: async (req,res,err) => {
     try {
       const response = await Product.deleteOne({'_id':req.query.id});
-      console.log(response);
-      Utility.sendSuccess(req,res, response);
+
+      Utility.sendSuccess(req,res, response.deletedCount==1);
     } catch(e){
       Utility.sendFailure(res,res, e.message);
     }
@@ -128,6 +130,7 @@ module.exports = {
      if (req.body.phone.length != 10){
       Utility.sendFailure(req,res,'error: please enter valid Phone Number')
      }
+    
      const data = await Shop.create(req.body);
      Utility.sendSuccess(req,res,data);
    } catch (e) {
