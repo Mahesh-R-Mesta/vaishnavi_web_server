@@ -15,17 +15,30 @@ const ShopSchema = mongoose.Schema({
     phone:{
         type: Number,
         required: [true,"Phone number required"],
-        unique: true
+        unique: true,
+        validate:{
+            validator:(num)=>{
+                return num.length == 10;
+            },
+            message: props => `${props} is not valid number`
+        }
     },
     email: {
         type: String,
-        required: [false,"Email is required"],
-        default:'none'
+        required: false,
+        unique:true,
+        validate:{
+            validator:(email)=>{
+               return email.includes("@") && email.includes(".")
+            },
+            message:(email)=> `${email} invalid email`
+        }
     },
     updatedAt:{
         type: Number,
-        default: Date.parse(new Date)
-    },
+        default: Date.parse(new Date),
+        required:false
+    },  
     address: {
         district:{
             type: String,
@@ -39,7 +52,7 @@ const ShopSchema = mongoose.Schema({
         },
         pinCode:{
            type: Number,
-           required: true,
+           required: false,
         },
     }
 });

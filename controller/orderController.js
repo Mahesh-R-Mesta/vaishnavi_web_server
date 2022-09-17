@@ -1,5 +1,4 @@
 const OrderModel = require('../model/orderModel'); 
-const ShopModel = require('../model/shopsModel');
 const ProductModel = require('../model/productModel')
 const Utility = require('../services/utilityController');
 

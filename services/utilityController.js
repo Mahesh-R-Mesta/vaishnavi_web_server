@@ -25,10 +25,13 @@ module.exports = {
       message:"User not found"
     })
   },
-  isNotEmpty(value){
+  isNotEmpty:(value)=>{
     if(value === undefined || value === '' || value === 'undefined'){
      return false; 
     }
     return true;
+  },
+  validNumber:(number)=>{
+    return number.length != 10
   }
 };

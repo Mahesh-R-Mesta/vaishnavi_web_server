@@ -1,6 +1,5 @@
 const Utility = require("../services/utilityController");
 const Product = require('../model/productModel');
-const Shop = require('../model/shopsModel');
 const Users = require('../model/usersModel');
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
@@ -124,34 +123,4 @@ module.exports = {
       Utility.sendFailure(res,res, e.message);
     }
   },
-
-  addShop: async (req,res,err) =>{
-   try {
-     if (req.body.phone.length != 10){
-      Utility.sendFailure(req,res,'error: please enter valid Phone Number')
-     }
-    
-     const data = await Shop.create(req.body);
-     Utility.sendSuccess(req,res,data);
-   } catch (e) {
-     Utility.sendFailure(req,res,e.message);
-   }
-  },
-
-  getShops: async (req,res,err)=>{
-    try {
-      if(Utility.isNotEmpty(req.query.id)){
-        const shop = await Shop.findOne({"_id":req.query.id});
-        return Utility.sendSuccess(req,res,shop)
-      }
-      const shop = await Shop.find()
-      Utility.sendSuccess(req,res,shop)
-    } catch(e){
-      Utility.sendFailure(req,res,e)
-    }
-  },
-
-  
-
-
 };
