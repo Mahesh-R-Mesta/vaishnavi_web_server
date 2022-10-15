@@ -19,6 +19,8 @@ router.route('/updateProduct').post(authenticate,adminController.updateProduct);
 //shops
 router.route('/createShop').post(authenticate, shopController.addShop);
 router.route('/getShop').get(authenticate, shopController.getShops);
+router.route('/deleteStore').get(authenticate, shopController.deleteShopById)
+router.route('/getStoreDetail').get(authenticate, shopController.getStoreDeatil)
 //orders
 router.route('/createOrder').post(authenticate,orderController.createOrder);
 

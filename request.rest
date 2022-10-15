@@ -41,3 +41,5 @@ Content-Type: application/json
 ####
 GET http://127.0.0.1:4000/api/v1/admin/getShop
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJkNTk1YWY1YjQxNDcwZTNkZTIxMTI0IiwiZW1haWwiOiJtYWhlc2htZXN0YTk4QGdtYWlsLmNvbSIsImlhdCI6MTY1ODUwODAzOH0.69ofhJavdtPOlD4gqwn1t1fp7OKyQXqWFmsiLAa0YUc
+
+

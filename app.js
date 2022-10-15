@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const admin = require("./routes/adminRoute");
 const app = express();
+const xxs = require('xss-clean');
 
 if(process.env.NODE_ENV === 'development'){
   app.use(morgan("dev"));
@@ -14,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(cors());
-
+app.use(xxs())
 app.use("/api/v1/admin", admin);
 
 app.use((req, res) => {

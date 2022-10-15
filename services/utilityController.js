@@ -8,6 +8,7 @@ module.exports = {
     });
   },
   sendFailure: (req, res, errMsg) => {
+    console.log(e)
     res.status(400).json({
       code: StatusCode.failure,
       message: errMsg,

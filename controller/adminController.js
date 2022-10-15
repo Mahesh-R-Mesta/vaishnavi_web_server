@@ -117,7 +117,6 @@ module.exports = {
   deleteProductById: async (req,res,err) => {
     try {
       const response = await Product.deleteOne({'_id':req.query.id});
-
       Utility.sendSuccess(req,res, response.deletedCount==1);
     } catch(e){
       Utility.sendFailure(res,res, e.message);

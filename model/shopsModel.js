@@ -18,7 +18,7 @@ const ShopSchema = mongoose.Schema({
         unique: true,
         validate:{
             validator:(num)=>{
-                return num.length == 10;
+                return String(num).length == 10;
             },
             message: props => `${props} is not valid number`
         }
@@ -36,7 +36,7 @@ const ShopSchema = mongoose.Schema({
     },
     updatedAt:{
         type: Number,
-        default: Date.parse(new Date),
+        default: Date.parse(new Date()),
         required:false
     },  
     address: {
