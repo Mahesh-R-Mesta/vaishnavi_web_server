@@ -19,7 +19,7 @@ const schema = mongoose.Schema({
     required: [true,"total amount required"]
   },
   createdAt:{
-    type:String,
+    type: String,
     default: (new Date()).getTime(),
   }
 })

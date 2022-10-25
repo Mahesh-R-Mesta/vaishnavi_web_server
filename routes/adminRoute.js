@@ -4,7 +4,6 @@ const orderController = require("../controller/orderController")
 const authenticate = require('../services/auth_middleware')
 const shopController = require('../controller/shopController');
 
-
 const router = express.Router();
 
 //authentication
@@ -17,7 +16,7 @@ router.route('/getProducts').get(authenticate,adminController.getProducts);
 router.route('/deleteById').get(authenticate, adminController.deleteProductById);
 router.route('/updateProduct').post(authenticate,adminController.updateProduct);
 //shops
-router.route('/createShop').post(authenticate, shopController.addShop);
+router.route('/createShop').post(authenticate, shopController.addOrUpdateShop);
 router.route('/getShop').get(authenticate, shopController.getShops);
 router.route('/deleteStore').get(authenticate, shopController.deleteShopById)
 router.route('/getStoreDetail').get(authenticate, shopController.getStoreDeatil)

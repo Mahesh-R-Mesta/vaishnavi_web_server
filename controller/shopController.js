@@ -3,10 +3,14 @@ const Shop = require('../model/shopsModel');
 const Utility = require('../services/utilityController');
 
 module.exports = {
-    addShop: async (req,res,err) =>{
+    addOrUpdateShop: async (req,res,err) =>{
         try {
           if (Utility.validNumber(String(req.body.phone))){
            return Utility.sendFailure(req,res,'please enter valid phone number')
+          }
+          if(req.body.id!=null){
+            const data = await Shop.findByIdAndUpdate(req.body.id,req.body);
+            return Utility.sendSuccess(req,res,req.body);
           }
           const data = await Shop.create(req.body);
            Utility.sendSuccess(req,res,data);
@@ -42,8 +46,8 @@ module.exports = {
     getStoreDeatil: async (req,res,err) => {
       try {
         const data = await Shop.find({"_id":req.query.id});
-        if(Utility.isNotEmpty(data)){
-          Utility.sendSuccess(req,res,data)
+        if(Utility.isNotEmpty(data) && data.length==1){
+          Utility.sendSuccess(req,res,data[0])
         } else {
           Utility.sendFailure(req,res,"Shop Not Found")
         }
